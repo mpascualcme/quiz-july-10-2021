@@ -1,0 +1,36 @@
+   89  yum -y install httpd
+   90  systemctl start httpd
+   91  systemctl enable httpd
+   92  systemctl status httpd
+   93  ifconfig
+   94  yum -y install network-scripts
+   95  ifconfig
+   96  yum -y install ifconfig
+   97  yum -y install net-tools
+   98  ifconfig
+   99  firewallcmd
+  100  systemctl stop firewalld
+  101  systemctl start firewalld
+  102  fireawll-cmd -h
+  103  firewall-cmd --zone=public --add-port=80/tcp --permanent
+  104  fireall-cmd reload
+  105  firewall-cmd reload
+  106  firewall-cmd restart
+  107  systemctl restart firewalld
+  108  vi /etc/httpd/conf/httpd.conf
+  109  systemctl restart httpd
+  110  systemctl status httpd.service
+  111  tail -f /var/log/audit/audit.log
+  112  ausearch -h
+  113  ausearch -a svc -c httpd
+  114  ausearch -m svc -c httpd
+  115  ausearch -m avc -c httpd
+  116  #semanage port -m -t http_port_t -p tcp 8881
+  117  semanage port -l | grep http
+  118  semanage port -m -t http_port_t -p tcp 8881
+  119  semanage port -a -t http_port_t -p tcp 8881
+  120  semanage port -l | grep http
+  121  systemctl restart httpd
+  122  systemctl status httpd
+  123  firewall-cmd --zone=public --add-port=8881/tcp --permanent
+  124  systemctl reload firewalld
